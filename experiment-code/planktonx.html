@@ -1,0 +1,448 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional
+<HTML><HEAD><META HTTP-EQUIV="Content-Type" CONTENT="text/html">
+<TITLE>plankton study, with arbitrary probabilities</TITLE> 
+
+<script src="jMisc.js"></script>
+<script src="plankton.js"></script>
+
+<link rel="stylesheet" type="text/css" 
+href="jStyleNew.css">
+
+</HEAD>
+
+<body class='darker'>
+<table class='pageTable'><tr><td>
+<table>
+<tr>
+<td style="vertical-align:top">
+
+<script>
+<!--
+  function nextUrl() {
+     info= document.getElementById('infoInput').value.split(',')
+     var subjID= document.getElementById('subjID').value;
+     var lang= document.getElementById('lang').value;
+     var reqType= document.getElementById('reqType').value;
+     nextLoc= 'instructions.php?reqVer=_&reqSubjID=' +subjID +'&reqInfo=' +info +'&reqLang=' +lang +'&reqType=' +reqType ;
+     document.location= nextLoc;
+  }
+  
+  function recoverUrl() {
+     subjectNumber= document.getElementById('subjNumToRecover').value;
+	 var nextLoc= 'mock.php?S:' +subjectNumber;
+	 document.location= nextLoc;
+  }
+//-->
+</script>
+
+<p style="margin-top: 0pt;">
+
+<h2>April 2013</h2>
+Hi Gregor! Here are some testing links for the DI2 Project Study Pilot. The participant numbers should equal the numbers on the participation sheet. Just click on each number to start. <br>
+In case of trouble call me (Jana) 0179 910 46 31. Thanks!
+<p>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=777&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Testsubject 777</a><p>
+
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2140&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2140,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2141&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2141,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2142&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2142,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2143&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2143,</a><p>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2144&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2144,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2145&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2145,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2146&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2146,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2147&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2147,</a><p>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2148&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2148,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2149&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2149,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2150&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2150,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2151&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2151,</a><p>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2152&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2152,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2153&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2153,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2154&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2154,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2155&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2155,</a><p>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2156&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2156,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2157&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2157,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2158&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2158,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2159&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2159,</a><p>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2160&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2160,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2161&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2161,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2162&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2162,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2163&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2163,</a><p>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2164&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2164,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2165&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2165,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2166&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2166,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2167&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2167,</a><p>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2168&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2168,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2169&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2169,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2170&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2170,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2171&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2171,</a><p>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2172&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2172,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2173&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2173,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2174&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2174,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2175&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2175,</a><p>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2176&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2176,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2177&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2177,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2178&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2178,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2179&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2179,</a><p>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2180&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2180,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2181&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2181,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2182&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2182,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2183&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2183,</a><p>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2184&reqInfo=0.71,0,0,0.5,0.07,0.04,0.29,0,0,0.04,0.29,0,0,0.38,0.06,0.04,0.29,&reqLang=de&reqType=did333">Participant 2184,</a>
+
+
+   
+   
+   
+   
+
+<h2>Dec 2012</h2>
+Hi Gregor! Here are links for the next OED experiment.  Thanks a lot!  -Jonathan
+<p>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=777&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>Testing1_P777</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=778&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>Testing2_P778</a>
+<br>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2500&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2500</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2501&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2501</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2502&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2502</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2503&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2503</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2504&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2504</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2505&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2505</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2506&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2506</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2507&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2507</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2508&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2508</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2509&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2509</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2510&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2510</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2511&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2511</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2512&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2512</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2513&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2513</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2514&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2514</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2515&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2515</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2516&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2516</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2517&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2517</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2518&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2518</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2519&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2519</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2520&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2520</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2521&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2521</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2522&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2522</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2523&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2523</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2524&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2524</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2525&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2525</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2526&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2526</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2527&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2527</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2528&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2528</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2529&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2529</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2530&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2530</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2531&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2531</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2532&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2532</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2533&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2533</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2534&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2534</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2535&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2535</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2536&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2536</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2537&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2537</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2538&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.225,0,0.225,0.025,0.275,0.025,0.275&reqLang=de&reqType=oe2333'>2538</a>
+&nbsp;&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2539&reqInfo=0.67,0,0,0,0,0.475,0,0.475,0,0,0.405,0,0.405,0.025,0.095,0.025,0.095&reqLang=de&reqType=oe2333'>2539</a>	
+	
+<h2>Aug 2012</h2>
+Hi Gregor and Jan! Here are the next links for the DI Project Study Pilot. The participant numbers should equal the numbers on the participation sheet. Just click on each number to start. <br>
+In case of trouble call me (Jana) 0179 910 46 31. Thanks!
+	<p>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=777&reqInfo=0.668,0.0000,0.0000,0.5800,0.0000,0.0000,0.3334,0.0000,0.0000,0.0000,0.3333,0.0000,0.0000,0.4200,0.0000,0.0000,0.3332&reqLang=de&reqType=did333">Participant 777 Test!</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=778&reqInfo=0.668,0.0000,0.0000,0.5800,0.0000,0.0000,0.3334,0.0000,0.0000,0.0000,0.3333,0.0000,0.0000,0.4200,0.0000,0.0000,0.3332&reqLang=de&reqType=did333">Participant 778 Test!</a>
+   <p>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2126&reqInfo=0.668,0.0000,0.0000,0.5800,0.0000,0.0000,0.3334,0.0000,0.0000,0.0000,0.3333,0.0000,0.0000,0.4200,0.0000,0.0000,0.3332&reqLang=de&reqType=did333">Participant 2126,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2127&reqInfo=0.668,0.0000,0.0000,0.5800,0.0000,0.0000,0.3334,0.0000,0.0000,0.0000,0.3333,0.0000,0.0000,0.4200,0.0000,0.0000,0.3332&reqLang=de&reqType=did333">Participant 2127,</a><p>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2128&reqInfo=0.668,0.0000,0.0000,0.5800,0.0000,0.0000,0.3334,0.0000,0.0000,0.0000,0.3333,0.0000,0.0000,0.4200,0.0000,0.0000,0.3332&reqLang=de&reqType=did333">Participant 2128,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2129&reqInfo=0.668,0.0000,0.0000,0.5800,0.0000,0.0000,0.3334,0.0000,0.0000,0.0000,0.3333,0.0000,0.0000,0.4200,0.0000,0.0000,0.3332&reqLang=de&reqType=did333">Participant 2129,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2130&reqInfo=0.668,0.0000,0.0000,0.5800,0.0000,0.0000,0.3334,0.0000,0.0000,0.0000,0.3333,0.0000,0.0000,0.4200,0.0000,0.0000,0.3332&reqLang=de&reqType=did333">Participant 2130,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2131&reqInfo=0.668,0.0000,0.0000,0.5800,0.0000,0.0000,0.3334,0.0000,0.0000,0.0000,0.3333,0.0000,0.0000,0.4200,0.0000,0.0000,0.3332&reqLang=de&reqType=did333">Participant 2131,</a><p>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2132&reqInfo=0.668,0.0000,0.0000,0.5800,0.0000,0.0000,0.3334,0.0000,0.0000,0.0000,0.3333,0.0000,0.0000,0.4200,0.0000,0.0000,0.3332&reqLang=de&reqType=did333">Participant 2132,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2133&reqInfo=0.668,0.0000,0.0000,0.5800,0.0000,0.0000,0.3334,0.0000,0.0000,0.0000,0.3333,0.0000,0.0000,0.4200,0.0000,0.0000,0.3332&reqLang=de&reqType=did333">Participant 2133,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2134&reqInfo=0.668,0.0000,0.0000,0.5800,0.0000,0.0000,0.3334,0.0000,0.0000,0.0000,0.3333,0.0000,0.0000,0.4200,0.0000,0.0000,0.3332&reqLang=de&reqType=did333">Participant 2134,</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2135&reqInfo=0.668,0.0000,0.0000,0.5800,0.0000,0.0000,0.3334,0.0000,0.0000,0.0000,0.3333,0.0000,0.0000,0.4200,0.0000,0.0000,0.3332&reqLang=de&reqType=did333">Participant 2135</a><p>
+
+
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+
+
+<h2>May 2010</h2>
+Gregor and Jan: Here are the links for the participants for the eye movement experiment, May, 2010.  Just click on each participant number once, for each subject, to start.  
+(For example, for the first person on Monday, 3 May 2010, click "Participant 58".)  If any problems just call me 017-4470-1670 or x658.  -Jonathan 
+<br><br>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=58&reqInfo=0.5,0,0,.75,0,.65,0&reqLang=de&reqType=sal357">Participant_58,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=59&reqInfo=0.5,0,0,.65,0,.75,0&reqLang=de&reqType=sal375">Participant_59,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=60&reqInfo=0.5,.75,0,0,0,.65,0&reqLang=de&reqType=sal537">Participant_60,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=61&reqInfo=0.5,.65,0,0,0,.75,0&reqLang=de&reqType=sal735">Participant_61,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=62&reqInfo=0.5,.65,0,.75,0,0,0&reqLang=de&reqType=sal753">Participant_62,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=63&reqInfo=0.5,.75,0,.65,0,0,0&reqLang=de&reqType=sal573">Participant_63,</a>
+      <!-- here we repeat everything once-->                                                                                                                                   
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=64&reqInfo=0.5,0,0,.75,0,.65,0&reqLang=de&reqType=sal357">Participant_64,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=65&reqInfo=0.5,0,0,.65,0,.75,0&reqLang=de&reqType=sal375">Participant_65,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=66&reqInfo=0.5,.75,0,0,0,.65,0&reqLang=de&reqType=sal537">Participant_66,</a>
+      <p>                                                                                                                                                                  
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=67&reqInfo=0.5,.65,0,0,0,.75,0&reqLang=de&reqType=sal735">Participant_67,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=68&reqInfo=0.5,.65,0,.75,0,0,0&reqLang=de&reqType=sal753">Participant_68,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=69&reqInfo=0.5,.75,0,.65,0,0,0&reqLang=de&reqType=sal573">Participant_69,</a>
+                                                                                                                                                                               
+                                                                                                                                                                               
+      <!-- here we have equal salience -->                                                                                                                                     
+      <p>                                                                                                                                                                      
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=70&reqInfo=0.5,0,0,.75,0,.65,0&reqLang=de&reqType=sal377">Participant_70,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=71&reqInfo=0.5,0,0,.65,0,.75,0&reqLang=de&reqType=sal377">Participant_71,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=72&reqInfo=0.5,.75,0,0,0,.65,0&reqLang=de&reqType=sal737">Participant_72,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=73&reqInfo=0.5,.65,0,0,0,.75,0&reqLang=de&reqType=sal737">Participant_73,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=74&reqInfo=0.5,.65,0,.75,0,0,0&reqLang=de&reqType=sal773">Participant_74,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=75&reqInfo=0.5,.75,0,.65,0,0,0&reqLang=de&reqType=sal773">Participant_75,</a>
+      <!-- everything repeats once with equal salience-->                                                                                                                    
+      <p>                                                                                                                                                                    
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=76&reqInfo=0.5,0,0,.75,0,.65,0&reqLang=de&reqType=sal377">Participant_76,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=77&reqInfo=0.5,0,0,.65,0,.75,0&reqLang=de&reqType=sal377">Participant_77,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=78&reqInfo=0.5,.75,0,0,0,.65,0&reqLang=de&reqType=sal737">Participant_78,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=79&reqInfo=0.5,.65,0,0,0,.75,0&reqLang=de&reqType=sal737">Participant_79,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=80&reqInfo=0.5,.65,0,.75,0,0,0&reqLang=de&reqType=sal773">Participant_80,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=81&reqInfo=0.5,.75,0,.65,0,0,0&reqLang=de&reqType=sal773">Participant_81,</a>
+                                                                                                                                                                             
+      <!-- here we have sal7 vs sal4, and 15 percentage-point usefulness difference -->                                                                                                                                     
+      <p>                                                                                                                                                                    
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=82&reqInfo=0.5,.45,0,.75,0,0,0&reqLang=de&reqType=sal743">Participant_82,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=83&reqInfo=0.5,0,0,.45,0,.75,0&reqLang=de&reqType=sal374">Participant_83,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=84&reqInfo=0.5,0,0,.75,0,.45,0&reqLang=de&reqType=sal347">Participant_84,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=85&reqInfo=0.5,.75,0,0,0,.45,0&reqLang=de&reqType=sal437">Participant_85,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=86&reqInfo=0.5,.75,0,.45,0,0,0&reqLang=de&reqType=sal473">Participant_86,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=87&reqInfo=0.5,.45,0,0,0,.75,0&reqLang=de&reqType=sal734">Participant_87,</a>
+     <p>                                                                                                                                                                    
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=88&reqInfo=0.5,.45,0,.75,0,0,0&reqLang=de&reqType=sal743">Participant_88,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=89&reqInfo=0.5,0,0,.45,0,.75,0&reqLang=de&reqType=sal374">Participant_89,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=90&reqInfo=0.5,0,0,.75,0,.45,0&reqLang=de&reqType=sal347">Participant_90,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=91&reqInfo=0.5,.75,0,0,0,.45,0&reqLang=de&reqType=sal437">Participant_91,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=92&reqInfo=0.5,.45,0,0,0,.75,0&reqLang=de&reqType=sal734">Participant_92,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=93&reqInfo=0.5,.75,0,.45,0,0,0&reqLang=de&reqType=sal473">Participant_93,</a>
+
+      <p>
+&nbsp;<a  href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=94&reqInfo=0.5,.75,0,.75,0,0,0&reqLang=de&reqType=sal743">Participant_94,</a>
+&nbsp;<a  href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=95&reqInfo=0.5,.75,0,.75,0,0,0&reqLang=de&reqType=sal473">Participant_95,</a>
+&nbsp;<a  href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=96&reqInfo=0.5,0,0,.75,0,.75,0&reqLang=de&reqType=sal374">Participant_96,</a>
+&nbsp;<a  href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=97&reqInfo=0.5,0,0,.75,0,.75,0&reqLang=de&reqType=sal347">Participant_97,</a>
+&nbsp;<a  href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=98&reqInfo=0.5,.75,0,0,0,.75,0&reqLang=de&reqType=sal734">Participant_98,</a>
+&nbsp;<a  href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=99&reqInfo=0.5,.75,0,0,0,.75,0&reqLang=de&reqType=sal437">Participant_99,</a>
+
+      <p>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=100&reqInfo=0.5,.75,0,.75,0,0,0&reqLang=de&reqType=sal743">Participant_100,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=101&reqInfo=0.5,.75,0,.75,0,0,0&reqLang=de&reqType=sal473">Participant_101,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=102&reqInfo=0.5,0,0,.75,0,.75,0&reqLang=de&reqType=sal374">Participant_102,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=103&reqInfo=0.5,0,0,.75,0,.75,0&reqLang=de&reqType=sal347">Participant_103,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=104&reqInfo=0.5,.75,0,0,0,.75,0&reqLang=de&reqType=sal734">Participant_104,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=105&reqInfo=0.5,.75,0,0,0,.75,0&reqLang=de&reqType=sal437">Participant_105,</a>
+
+      <p>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=106&reqInfo=0.5,.45,0,.75,0,0,0&reqLang=de&reqType=sal733">Participant_106,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=107&reqInfo=0.5,.75,0,.45,0,0,0&reqLang=de&reqType=sal373">Participant_107,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=108&reqInfo=0.5,0,0,.45,0,.75,0&reqLang=de&reqType=sal373">Participant_108,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=109&reqInfo=0.5,0,0,.75,0,.45,0&reqLang=de&reqType=sal337">Participant_109,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=110&reqInfo=0.5,.45,0,0,0,.75,0&reqLang=de&reqType=sal733">Participant_110,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=111&reqInfo=0.5,.75,0,0,0,.45,0&reqLang=de&reqType=sal337">Participant_111,</a>
+
+      <p>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=112&reqInfo=0.5,.45,0,.75,0,0,0&reqLang=de&reqType=sal733">Participant_112,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=113&reqInfo=0.5,.75,0,.45,0,0,0&reqLang=de&reqType=sal373">Participant_113,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=114&reqInfo=0.5,0,0,.45,0,.75,0&reqLang=de&reqType=sal373">Participant_114,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=115&reqInfo=0.5,0,0,.75,0,.45,0&reqLang=de&reqType=sal337">Participant_115,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=116&reqInfo=0.5,.45,0,0,0,.75,0&reqLang=de&reqType=sal733">Participant_116,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=117&reqInfo=0.5,.75,0,0,0,.45,0&reqLang=de&reqType=sal337">Participant_117,</a>
+
+      <p>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=118&reqInfo=0.5,.65,0,.75,0,0,0&reqLang=de&reqType=sal733">Participant_118,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=119&reqInfo=0.5,.75,0,.65,0,0,0&reqLang=de&reqType=sal373">Participant_119,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=120&reqInfo=0.5,0,0,.65,0,.75,0&reqLang=de&reqType=sal373">Participant_120,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=121&reqInfo=0.5,0,0,.75,0,.65,0&reqLang=de&reqType=sal337">Participant_121,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=122&reqInfo=0.5,.65,0,0,0,.75,0&reqLang=de&reqType=sal733">Participant_122,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=123&reqInfo=0.5,.75,0,0,0,.65,0&reqLang=de&reqType=sal337">Participant_123,</a>
+
+      <p>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=124&reqInfo=0.5,.65,0,.75,0,0,0&reqLang=de&reqType=sal733">Participant_124,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=125&reqInfo=0.5,.75,0,.65,0,0,0&reqLang=de&reqType=sal373">Participant_125,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=126&reqInfo=0.5,0,0,.65,0,.75,0&reqLang=de&reqType=sal373">Participant_126,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=127&reqInfo=0.5,0,0,.75,0,.65,0&reqLang=de&reqType=sal337">Participant_127,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=128&reqInfo=0.5,.65,0,0,0,.75,0&reqLang=de&reqType=sal733">Participant_128,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=129&reqInfo=0.5,.75,0,0,0,.65,0&reqLang=de&reqType=sal337">Participant_129,</a>
+
+
+	<h2>Project DI</h2>
+    <p>pilot: dependence vs independence test case: Dependent<br>
+	  
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=777&reqInfo=0.668,0.0000,0.0000,0.5800,0.0000,0.0000,0.3334,0.0000,0.0000,0.0000,0.3334,0.0000,0.0000,0.4200,0.0000,0.0000,0.3332&reqLang=de&reqType=sal444">Testsubject 777</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2001&reqInfo=0.668,0.0000,0.0000,0.0000,0.3334,0.5800,0.0000,0.0000,0.0000,0.0000,0.3334,0.4200,0.0000,0.0000,0.0000,0.0000,0.3332&reqLang=de&reqType=sal444">Participant_rw2001</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2002&reqInfo=0.668,0.0000,0.0000,0.0000,0.3334,0.0000,0.3334,0.4200,0.0000,0.5800,0.0000,0.0000,0.0000,0.0000,0.0000,0.0000,0.3332&reqLang=de&reqType=sal444">Participant_rw2002</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2003&reqInfo=0.668,0.0000,0.0000,0.5800,0.0000,0.0000,0.3334,0.0000,0.0000,0.0000,0.3334,0.0000,0.0000,0.4200,0.0000,0.0000,0.3332&reqLang=de&reqType=sal444">Participant_rw2003</a>
+	
+	<p>pilot: dependence vs independence test case: Independent
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2010&reqInfo=0.332,0.0741,0.1413,0.1481,0.1023,0.037,0.1951,0.0741,0.1413,0.1482,0.1023,0.2963,0.0741,0.0741,0.1413,0.1482,0.1023&reqLang=de&reqType=sal444">Participant_rw2010</a>
+
+	<h2>Project RW</h2>
+	<p>pilot: real world
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2004&reqInfo=0.5,0.0540,0.0217,0.0594,0.0040,0.0106,0.0205,0.0436,0.0096,0.1654,0.2677,0.2928,0.1245,0.1258,0.3775,0.2484,0.1746&reqLang=de&reqType=sal357">Participant_rw2004</a>
+      <p>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=130&reqInfo=0.5,0,0,.75,0,.75,0&reqLang=de&reqType=sal374">Participant_130,</a>
+      <p>
+&nbsp;<a  href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=131&reqInfo=0.5,.75,0,.75,0,0,0&reqLang=de&reqType=sal733">Participant_131,</a>
+&nbsp;<a  href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=132&reqInfo=0.5,.75,0,.75,0,0,0&reqLang=de&reqType=sal373">Participant_132,</a>
+&nbsp;<a  href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=133&reqInfo=0.5,0,0,.75,0,.75,0&reqLang=de&reqType=sal373">Participant_133,</a>
+&nbsp;<a  href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=134&reqInfo=0.5,0,0,.75,0,.75,0&reqLang=de&reqType=sal337">Participant_134,</a>
+&nbsp;<a  href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=135&reqInfo=0.5,.75,0,0,0,.75,0&reqLang=de&reqType=sal733">Participant_135,</a>
+&nbsp;<a  href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=136&reqInfo=0.5,.75,0,0,0,.75,0&reqLang=de&reqType=sal337">Participant_136,</a>
+	<p>                                                                                                                                                   
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=137&reqInfo=0.5,.75,0,.75,0,0,0&reqLang=de&reqType=sal733">Participant_137,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=138&reqInfo=0.5,.75,0,.75,0,0,0&reqLang=de&reqType=sal373">Participant_138,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=139&reqInfo=0.5,0,0,.75,0,.75,0&reqLang=de&reqType=sal373">Participant_139,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=140&reqInfo=0.5,0,0,.75,0,.75,0&reqLang=de&reqType=sal337">Participant_140,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=141&reqInfo=0.5,.75,0,0,0,.75,0&reqLang=de&reqType=sal733">Participant_141,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=142&reqInfo=0.5,.75,0,0,0,.75,0&reqLang=de&reqType=sal337">Participant_142,</a>
+
+
+      <p>pilot: real-world scenario <br>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2005&reqInfo=0.5,0.054,0.0217,0.0106,0.0205,0.1654,0.2677,0.1258,0.3775,0.0594,0.004,0.0436,0.0096,0.2928,0.1245,0.2484,0.1746&reqLang=de&reqType=rwa456">Participant_rw2005</a>
+
+pilot: real-world scenario 
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2006&reqInfo=0.5,0.1258,0.3774,0.2484,0.1746,0.1654,0.2677,0.2928,0.1245,0.0106,0.0205,0.0436,0.0096,0.054,0.0217,0.0594,0.004&reqLang=de&reqType=rwa456">Participant_rw2006</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2007&reqInfo=0.5,0.1258,0.3774,0.2484,0.1746,0.0106,0.0205,0.0436,0.0096,0.1654,0.2677,0.2928,0.1245,0.054,0.0217,0.0594,0.004&reqLang=de&reqType=rwa546">Participant_rw2007</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2008&reqInfo=0.5,0.1258,0.3774,0.2484,0.1746,0.1654,0.2677,0.2928,0.1245,0.0106,0.0205,0.0436,0.0096,0.054,0.0217,0.0594,0.004&reqLang=de&reqType=sal444">Participant_rw2008</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2009&reqInfo=0.5,0.1258,0.3774,0.1654,0.2677,0.0106,0.0205,0.054,0.0217,0.2484,0.1746,0.2928,0.1245,0.0436,0.0096,0.0594,0.004&reqLang=de&reqType=rwa645">Participant_rw2009</a>
+
+<p> (repeating scenarios where the first participant didn't finish)
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=143&reqInfo=0.5,.75,0,.75,0,0,0&reqLang=de&reqType=sal733">Participant_143,</a>
+&nbsp;<a href="http://141.14.165.6/users/chenkov/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=144&reqInfo=0.5,0,0,.75,0,.75,0&reqLang=de&reqType=sal373">Participant_144,</a>
+
+<p> new real world 
+<!--&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2010&reqInfo=0.5,0.054,0.0217,0.0106,0.0205,0.1654,0.2677,0.1258,0.3775,0.0594,0.004,0.0436,0.0096,0.2928,0.1245,0.2484,0.1746&reqLang=de&reqType=rwa456">Participant_rw2010</a>-->
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2011&reqInfo=0.5,0.1258,0.3774,0.2484,0.1746,0.1654,0.2677,0.2928,0.1245,0.0106,0.0205,0.0436,0.0096,0.054,0.0217,0.0594,0.004&reqLang=de&reqType=rwa456">Participant_rw2011</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2012&reqInfo=0.5,0.1258,0.3774,0.2484,0.1746,0.0106,0.0205,0.0436,0.0096,0.1654,0.2677,0.2928,0.1245,0.054,0.0217,0.0594,0.004&reqLang=de&reqType=rwa546">Participant_rw2012</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2013&reqInfo=0.5,0.054,0.0217,0.0106,0.0205,0.1654,0.2677,0.1258,0.3775,0.0594,0.004,0.0436,0.0096,0.2928,0.1245,0.2484,0.1746&reqLang=de&reqType=sal444">Participant_rw2013</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2014&reqInfo=0.5,0.1258,0.3774,0.2484,0.1746,0.1654,0.2677,0.2928,0.1245,0.0106,0.0205,0.0436,0.0096,0.054,0.0217,0.0594,0.004&reqLang=de&reqType=sal444">Participant_rw2014</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2015&reqInfo=0.5,0.1258,0.3774,0.2484,0.1746,0.0106,0.0205,0.0436,0.0096,0.1654,0.2677,0.2928,0.1245,0.054,0.0217,0.0594,0.004&reqLang=de&reqType=sal444">Participant_rw2015</a>
+<br>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2016&reqInfo=0.5,0.054,0.0217,0.0106,0.0205,0.1654,0.2677,0.1258,0.3775,0.0594,0.004,0.0436,0.0096,0.2928,0.1245,0.2484,0.1746&reqLang=de&reqType=rwa456">Participant_rw2016</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2017&reqInfo=0.5,0.1258,0.3774,0.2484,0.1746,0.1654,0.2677,0.2928,0.1245,0.0106,0.0205,0.0436,0.0096,0.054,0.0217,0.0594,0.004&reqLang=de&reqType=rwa456">Participant_rw2017</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2018&reqInfo=0.5,0.1258,0.3774,0.2484,0.1746,0.0106,0.0205,0.0436,0.0096,0.1654,0.2677,0.2928,0.1245,0.054,0.0217,0.0594,0.004&reqLang=de&reqType=rwa546">Participant_rw2018</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2019&reqInfo=0.5,0.054,0.0217,0.0106,0.0205,0.1654,0.2677,0.1258,0.3775,0.0594,0.004,0.0436,0.0096,0.2928,0.1245,0.2484,0.1746&reqLang=de&reqType=sal444">Participant_rw2019</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2020&reqInfo=0.5,0.1258,0.3774,0.2484,0.1746,0.1654,0.2677,0.2928,0.1245,0.0106,0.0205,0.0436,0.0096,0.054,0.0217,0.0594,0.004&reqLang=de&reqType=sal444">Participant_rw2020</a>
+&nbsp;<a href="http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2021&reqInfo=0.5,0.1258,0.3774,0.2484,0.1746,0.0106,0.0205,0.0436,0.0096,0.1654,0.2677,0.2928,0.1245,0.054,0.0217,0.0594,0.004&reqLang=de&reqType=sal444">Participant_rw2021</a>
+
+<br>
+<p> Hello Gregor and Jan: Here are the links for the next 10 participants for the plankton study (12 May 2011).
+If any problems just call me 017-4470-1670 or x658. Thanks a lot, Jonathan 
+<br>
+&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2022&reqInfo=0.332,0,0,0.3332,0,0,0.58,0,0,0.3334,0,0,0.42,0,0,0.3334,0&reqLang=de&reqType=sal444'>Participant_2022</a>
+&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2023&reqInfo=0.668,0,0,0,0.3332,0.58,0,0,0,0,0.3334,0.42,0,0,0,0,0.3334&reqLang=de&reqType=sal444'>Participant_2023</a>
+&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2024&reqInfo=0.332,0,0,0.3332,0,0.3334,0,0,0.42,0,0.58,0,0,0,0,0.3334,0&reqLang=de&reqType=sal444'>Participant_2024</a>
+&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2025&reqInfo=0.668,0,0,0.58,0,0,0.3332,0,0,0,0.3334,0,0,0.42,0,0,0.3334&reqLang=de&reqType=sal444'>Participant_2025</a>
+&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2026&reqInfo=0.668,0,0,0,0.3332,0,0.3334,0.42,0,0.58,0,0,0,0,0,0,0.3334&reqLang=de&reqType=sal444'>Participant_2026</a>
+<br>  
+&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2027&reqInfo=0.332,0,0,0,0.58,0.3332,0,0,0,0.3334,0,0,0,0,0.42,0.3334,0&reqLang=de&reqType=sal444'>Participant_2027</a>
+&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2028&reqInfo=0.668,0,0,0.58,0,0,0.3332,0,0,0,0.3334,0,0,0.42,0,0,0.3334&reqLang=de&reqType=sal444'>Participant_2028</a>
+&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2029&reqInfo=0.668,0,0,0,0.3332,0.58,0,0,0,0,0.3334,0.42,0,0,0,0,0.3334&reqLang=de&reqType=sal444'>Participant_2029</a>
+&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2030&reqInfo=0.332,0,0,0.3332,0,0.3334,0,0,0.42,0,0.58,0,0,0,0,0.3334,0&reqLang=de&reqType=sal444'>Participant_2030</a>
+&nbsp;<a href='http://141.14.165.6/users/agoel/rw/origPlank/stimuli/instructions.php?reqVer=_&reqSubjID=2031&reqInfo=0.332,0,0,0,0.58,0.3332,0,0,0,0.3334,0,0,0,0,0.42,0.3334,0&reqLang=de&reqType=sal444'>Participant_2031</a>
+
+</p>
+<br>
+<hr>
+<p style="margin-top: 0pt;">
+<p>
+<br>
+If the eye tracker crashes, or the participant has to take a break, enter the subject number (e.g. 777 for test, or 62 or whatever for the subject) here, and click "recover".
+<form>
+<input id='subjNumToRecover' name='subjNumToRecover' type=text  value='777'>
+<input type=button value="Recover" onClick="javascript:recoverUrl()">
+</form>
+</p>
+<br>
+<hr>
+  <p style="margin-top: 0pt;">
+  <p>
+  <br>
+  Otherwise (for testing), enter the information for the plankton experiment below.
+  For example, <br>.7,0,0.3,0.57,0,1,1  &nbsp;
+  <form>
+  <input name='infoInput'  id='infoInput'  type=text  value='0.5,0,0,.75,0,.65,0'>
+  <br>language
+  <select name='lang' id='lang'>
+  <option SELECTED value='en'>en
+  <option value='de'>de
+  <option value='all'>all
+  </select>  
+  <br>type of experiment
+  <select name='reqType' id='reqType'>
+  <option value='oed'>oed
+  <option value='1100'>1100
+  <option value='2100'>2100
+  <option value='10100'>10100 
+  <option value='sal333'>sal333
+  <option value='sal335'>sal335
+  <option value='sal337'>sal337
+  <option value='sal353'>sal353
+  <option value='sal355'>sal355
+  <option value='sal357'>sal357
+  <option value='sal373'>sal373
+  <option value='sal375'>sal375
+  <option value='sal377'>sal377
+  <option value='sal533'>sal533
+  <option value='sal535'>sal535
+  <option value='sal537'>sal537
+  <option value='sal553'>sal553
+  <option value='sal555'>sal555
+  <option value='sal557'>sal557
+  <option value='sal573'>sal573
+  <option value='sal575'>sal575
+  <option value='sal577'>sal577
+  <option value='sal733'>sal733
+  <option value='sal735'>sal735
+  <option value='sal737'>sal737
+  <option value='sal753'>sal753
+  <option value='sal755'>sal755
+  <option value='sal757'>sal757
+  <option value='sal773'>sal773
+  <option value='sal775'>sal775
+  <option value='sal777'>sal777
+  <option value='sal877'>sal877
+  <option value='sal878'>sal878
+  <option value='sal887'>sal887
+  <option value='sal888'>sal888
+  <option value='sal858'>sal858
+  <option value='sal759'>sal759
+  <option value='sal777'>sal777
+  <option SELECTED value='sal559'>sal559
+  <option value='sal577'>sal577
+  <option value='sal359'>sal359
+  <option value='sal377'>sal377
+  </select>
+  <br>subjID 
+  <input name='subjID' id='subjID' value='777'>
+  <br>
+  <input type=button value='instructions' onClick="javascript:nextUrl()" >
+  </form>
+</td>
+</tr>
+</table>
+</p>
+ 
+
+
+
+<script>
+<!--
+//preloadPlanktonPics_Sal() ;
+//-->
+
+</script>
+
+</td></tr></table>
+
+</body>
+</html>

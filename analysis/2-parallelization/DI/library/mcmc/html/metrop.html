@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Metropolis Algorithm</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for metrop {mcmc}"><tr><td>metrop {mcmc}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Metropolis Algorithm</h2>
+
+<h3>Description</h3>
+
+<p>Markov chain Monte Carlo for continuous random vector using a Metropolis
+algorithm.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+metrop(obj, initial, nbatch, blen = 1, nspac = 1, scale = 1, outfun,
+    debug = FALSE, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>obj</code></td>
+<td>
+<p>an R function that evaluates the log unnormalized probability
+density of the desired equilibrium distribution of the Markov chain.
+First argument is the state vector of the Markov chain.  Other arguments
+arbitrary and taken from the <code>...</code> arguments of this function.
+Should return <code>- Inf</code> for points of the state space having
+probability zero under the desired equilibrium distribution.
+Alternatively, an object of class <code>"metropolis"</code> from a
+previous run can be supplied, in which case any missing arguments
+(including the log unnormalized density function) are taken from
+this object (up until version 0.7-2 this was incorrect with respect
+to the <code>debug</code> argument, now it applies to it too).</p>
+</td></tr>
+<tr valign="top"><td><code>initial</code></td>
+<td>
+<p>a real vector, the initial state of the Markov chain.</p>
+</td></tr>
+<tr valign="top"><td><code>nbatch</code></td>
+<td>
+<p>the number of batches.</p>
+</td></tr>
+<tr valign="top"><td><code>blen</code></td>
+<td>
+<p>the length of batches.</p>
+</td></tr>
+<tr valign="top"><td><code>nspac</code></td>
+<td>
+<p>the spacing of iterations that contribute to batches.</p>
+</td></tr>
+<tr valign="top"><td><code>scale</code></td>
+<td>
+<p>controls the proposal step size.  If scalar or
+vector, the proposal is <code>x + scale * z</code> where <code>x</code> is
+the current state and <code>z</code> is a standard normal random vector.
+If matrix, the proposal is <code>x + scale %*% z</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>outfun</code></td>
+<td>
+<p>controls the output.  If a function, then the batch means
+of <code>outfun(state, ...)</code> are returned.  If a numeric
+or logical vector, then the batch means of <code>state[outfun]</code>
+(if this makes sense).  If missing, the the batch means
+of <code>state</code> are returned.</p>
+</td></tr>
+<tr valign="top"><td><code>debug</code></td>
+<td>
+<p>if <code>TRUE</code> extra output useful for testing.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>additional arguments for <code>obj</code> or <code>outfun</code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Runs a &ldquo;random-walk&rdquo; Metropolis algorithm, terminology introduced
+by Tierney (1994), with multivariate normal proposal
+producing a Markov chain with equilibrium distribution having a specified
+unnormalized density.  Distribution must be continuous.  Support of the
+distribution is the support of the density specified by argument <code>obj</code>.
+The initial state must satisfy <code>obj(state, ...) &gt; - Inf</code>.
+Description of a complete MCMC analysis (Bayesian logistic regression)
+using this function can be found in the vignette <code>demo</code>
+(<a href="../doc/demo.pdf">../doc/demo.pdf</a>).
+</p>
+<p>Suppose the function coded by the log unnormalized function (either
+<code>obj</code> or <code>obj$lud</code>) is actually a log unnormalized density,
+that is, if <i>w</i> denotes that function, then <i>exp(w)</i> integrates
+to some value strictly between zero and infinity.  Then the <code>metrop</code>
+function always simulates a reversible, Harris ergodic Markov chain having
+the equilibrium distribution with this log unnormalized density.
+The chain is not guaranteed to be geometrically ergodic.  In fact it cannot
+be geometrically ergodic if the tails of the log unnormalized density are
+sufficiently heavy.  The <code><a href="morph.metrop.html">morph.metrop</a></code> function deals with this
+situation.
+</p>
+
+
+<h3>Value</h3>
+
+<p>an object of class <code>"mcmc"</code>, subclass <code>"metropolis"</code>,
+which is a list containing at least the following components:
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>accept</code></td>
+<td>
+<p>fraction of Metropolis proposals accepted.</p>
+</td></tr>
+<tr valign="top"><td><code>batch</code></td>
+<td>
+<p><code>nbatch</code> by <code>p</code> matrix, the batch means, where
+<code>p</code> is the dimension of the result of <code>outfun</code>
+if <code>outfun</code> is a function, otherwise the dimension of
+<code>state[outfun]</code> if that makes sense, and the dimension
+of <code>state</code> when <code>outfun</code> is missing.</p>
+</td></tr>
+<tr valign="top"><td><code>initial</code></td>
+<td>
+<p>value of argument <code>initial</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>final</code></td>
+<td>
+<p>final state of Markov chain.</p>
+</td></tr>
+<tr valign="top"><td><code>initial.seed</code></td>
+<td>
+<p>value of <code>.Random.seed</code> before the run.</p>
+</td></tr>
+<tr valign="top"><td><code>final.seed</code></td>
+<td>
+<p>value of <code>.Random.seed</code> after the run.</p>
+</td></tr>
+<tr valign="top"><td><code>time</code></td>
+<td>
+<p>running time of Markov chain from <code>system.time()</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>lud</code></td>
+<td>
+<p>the function used to calculate log unnormalized density,
+either <code>obj</code> or <code>obj$lud</code> from a previous run.</p>
+</td></tr>
+<tr valign="top"><td><code>nbatch</code></td>
+<td>
+<p>the argument <code>nbatch</code> or <code>obj$nbatch</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>blen</code></td>
+<td>
+<p>the argument <code>blen</code> or <code>obj$blen</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>nspac</code></td>
+<td>
+<p>the argument <code>nspac</code> or <code>obj$nspac</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>outfun</code></td>
+<td>
+<p>the argument <code>outfun</code> or <code>obj$outfun</code>.</p>
+</td></tr>
+</table>
+<p>Description of additional output when <code>debug = TRUE</code> can be
+found in the vignette <code>debug</code> (<a href="../doc/debug.pdf">../doc/debug.pdf</a>).
+</p>
+
+
+<h3>Warning</h3>
+
+<p>If <code>outfun</code> is missing or not a function, then the log unnormalized
+density can be defined without a ... argument and that works fine.
+One can define it starting <code>ludfun &lt;- function(state)</code> and that works
+or <code>ludfun &lt;- function(state, foo, bar)</code>, where <code>foo</code> and <code>bar</code>
+are supplied as additional arguments to <code>metrop</code>.
+</p>
+<p>If <code>outfun</code> is a function, then both it and the log unnormalized
+density function can be defined without ... arguments <em>if they
+have exactly the same arguments list</em> and that works fine.  Otherwise it
+doesn't work.  Start the definitions <code>ludfun &lt;- function(state, foo)</code>
+and <code>outfun &lt;- function(state, bar)</code> and you get an error about
+unused arguments.  Instead start the definitions
+<code>ludfun &lt;- function(state, foo, ...)</code>
+and <code>outfun &lt;- function(state, bar, ...)</code>, supply
+<code>foo</code> and <code>bar</code> as additional arguments to <code>metrop</code>,
+and that works fine.
+</p>
+<p>In short, the log unnormalized density function and <code>outfun</code> need
+to have ... in their arguments list to be safe.  Sometimes it works
+when ... is left out and sometimes it doesn't.
+</p>
+<p>Of course, one can avoid this whole issue by always defining the log
+unnormalized density function and <code>outfun</code> to have only one argument
+<code>state</code> and use global variables (objects in the R global environment) to
+specify any other information these functions need to use.  That too
+follows the R way.  But some people consider that bad programming practice.
+</p>
+
+
+<h3>References</h3>
+
+<p>Tierney, L. (1994)
+Markov chains for exploring posterior distributions (with discussion).
+<em>Annals of Statistics</em> <b>22</b> 1701&ndash;1762.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="morph.metrop.html">morph.metrop</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+h &lt;- function(x) if (all(x &gt;= 0) &amp;&amp; sum(x) &lt;= 1) return(1) else return(-Inf)
+out &lt;- metrop(h, rep(0, 5), 1000)
+out$accept
+# acceptance rate too low
+out &lt;- metrop(out, scale = 0.1)
+out$accept
+# acceptance rate o. k. (about 25 percent)
+plot(out$batch[ , 1])
+# but run length too short (few excursions from end to end of range)
+out &lt;- metrop(out, nbatch = 1e4)
+out$accept
+plot(out$batch[ , 1])
+hist(out$batch[ , 1])
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>mcmc</em> version 0.9-4 <a href="00Index.html">Index</a>]</div>
+</body></html>

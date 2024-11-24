@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Simulated Tempering and Umbrella Sampling</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for temper {mcmc}"><tr><td>temper {mcmc}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Simulated Tempering and Umbrella Sampling</h2>
+
+<h3>Description</h3>
+
+<p>Markov chain Monte Carlo for continuous random vectors using parallel
+or serial simulated tempering, also called umbrella sampling.  For
+serial tempering the state of the Markov chain is a pair <i>(i, x)</i>,
+where <i>i</i> is an integer between 1 and <i>k</i> and <i>x</i> is a vector
+of length <i>p</i>.  This pair is represented as a single real vector
+<code>c(i, x)</code>.  For parallel tempering the state of the Markov chain
+is vector of vectors <i>(x[1], &hellip;, x[k])</i>,
+where each <code>x</code> is of length <i>p</i>.  This vector of vectors is
+represented as a <i>k by p</i> matrix.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+temper(obj, initial, neighbors, nbatch, blen = 1, nspac = 1, scale = 1,
+    outfun, debug = FALSE, parallel = FALSE, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>obj</code></td>
+<td>
+<p>either an <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> function or an object of class <code>"tempering"</code> from
+a previous run.  If a function, should evaluate the log unnormalized
+density <i>log h(i, x)</i> of the desired equilibrium
+distribution of the Markov chain for serial tempering (the same function
+is used for both serial and parallel tempering, see details below for
+further explanation).  If an object, the log unnormalized density function
+is <code>obj$lud</code>, and missing arguments of <code>temper</code> are
+obtained from the corresponding elements of <code>obj</code>.
+The first argument of the log unnormalized density function is the
+state for simulated tempering <i>(i, x)</i> is supplied as an <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> vector
+<code>c(i, x)</code>; other arguments are arbitrary and taken from
+the <code>...</code> arguments of <code>temper</code>.  The log unnormalized density
+function should return <code>-Inf</code> for points of the state space having
+probability zero.</p>
+</td></tr>
+<tr valign="top"><td><code>initial</code></td>
+<td>
+<p>for serial tempering, a real vector <code>c(i, x)</code> as
+described above.  For parallel tempering, a real
+<i>k by p</i> matrix as described above.  In either case,
+the initial state of the Markov chain.</p>
+</td></tr>
+<tr valign="top"><td><code>neighbors</code></td>
+<td>
+<p>a logical symmetric matrix of dimension <code>k</code>
+by <code>k</code>.  Elements that are <code>TRUE</code> indicate jumps
+or swaps attempted by the Markov chain.</p>
+</td></tr>
+<tr valign="top"><td><code>nbatch</code></td>
+<td>
+<p>the number of batches.</p>
+</td></tr>
+<tr valign="top"><td><code>blen</code></td>
+<td>
+<p>the length of batches.</p>
+</td></tr>
+<tr valign="top"><td><code>nspac</code></td>
+<td>
+<p>the spacing of iterations that contribute to batches.</p>
+</td></tr>
+<tr valign="top"><td><code>scale</code></td>
+<td>
+<p>controls the proposal step size for real elements of the state
+vector.  For serial tempering, proposing a new value for the <i>x</i>
+part of the state <i>(i, x)</i>.  For parallel tempering, proposing
+a new value for the <i>x[i]</i> part of the state
+<i>(x[1], &hellip;, x[k])</i>.  In either case, the proposal
+is a real vector of length <i>p</i>.  If scalar or vector, the proposal
+is <code>x + scale * z</code> where <code>x</code> is the part <i>x</i> or
+<i>x[i]</i> of the state the proposal may replace.
+If matrix, the proposal is
+<code>x + scale %*% z</code>.  If list, the length must be <code>k</code>,
+and each element must be scalar, vector, or matrix, and operate as
+described above.  The <i>i</i>-th component of the list is used to update
+<i>x</i> when the state is <i>(i, x)</i> or <i>x[i]</i> otherwise.</p>
+</td></tr>
+<tr valign="top"><td><code>outfun</code></td>
+<td>
+<p>controls the output.  If a function, then the batch means
+of <code>outfun(state, ...)</code> are returned.  The argument <code>state</code>
+is like the argument <code>initial</code> of this function.  If missing, the
+batch means of the real part of the state vector or matrix are returned,
+and for serial tempering the batch means of a multivariate Bernoulli
+indicating the current component are returned.</p>
+</td></tr>
+<tr valign="top"><td><code>debug</code></td>
+<td>
+<p>if <code>TRUE</code> extra output useful for testing.</p>
+</td></tr>
+<tr valign="top"><td><code>parallel</code></td>
+<td>
+<p>if <code>TRUE</code> does parallel tempering, if <code>FALSE</code> does
+serial tempering.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>additional arguments for <code>obj</code> or <code>outfun</code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Serial tempering simulates a mixture of distributions of a continuous random
+vector.  The number of components of the mixture is <code>k</code>, and the dimension
+of the random vector is <code>p</code>.  Denote the state <i>(i, x)</i>, where <i>i</i>
+is a positive integer between 1 and <i>k</i>, and let <i>h(i, x)</i> denote
+the unnormalized joint density of their equilibrium distribution.
+The logarithm of this function is what <code>obj</code> or <code>obj$lud</code> calculates.
+The mixture distribution is the marginal for <i>x</i> derived from
+the equilibrium distribution <i>h(i, x)</i>, that is,
+</p>
+<p style="text-align: center;"><i>h(x) = sum[i = 1 to k] h(i, x)</i></p>
+
+<p>Parallel tempering simulates a product of distributions of a continuous random
+vector.  Denote the state <i>(x[1], &hellip;, x[k])</i>,
+then the unnormalized joint density of the equilibrium distribution is
+</p>
+<p style="text-align: center;"><i>h(x[1], &hellip;, x[k]) = prod[i = 1 to k] h(i, x[i])</i></p>
+
+<p>The update mechanism of the Markov chain combines two kinds of elementary
+updates: jump/swap updates (jump for serial tempering, swap for parallel
+tempering) and within-component updates.  Each iteration of the Markov chain
+one of these elementary updates is done.  With probability 1/2 a jump/swap
+update is done, and with probability 1/2 a with-component update is done.
+</p>
+<p>Within-component updates are the same for both serial and parallel tempering.
+They are &ldquo;random-walk&rdquo; Metropolis updates with multivariate normal
+proposal, the proposal distribution being determined by the argument
+<code>scale</code>.  In serial tempering, the <i>x</i> part of the current state
+<i>(i, x)</i> is updated preserving <i>h(i, x)</i>.
+In parallel tempering, an index <i>i</i> is chosen at random and the part
+of the state <i>x[i]</i> representing that component is updated,
+again preserving <i>h(i, x)</i>.
+</p>
+<p>Jump updates choose uniformly at random a neighbor of the current component:
+if <i>i</i> indexes the current component, then it chooses uniformly at random
+a <i>j</i> such that <code>neighbors[i, j] == TRUE</code>.  It then does does a
+Metropolis-Hastings update for changing the current state from <i>(i, x)</i>
+to <i>(j, x)</i>.
+</p>
+<p>Swap updates choose a component uniformly at random and a neighbor of that
+component uniformly at random: first an index <i>i</i> is chosen uniformly
+at random between 1 and <i>k</i>, then an index <i>j</i> is chosen
+uniformly at random such that <code>neighbors[i, j] == TRUE</code>.  It then does
+does a Metropolis-Hastings update for swapping the states of the
+two components: interchanging <i>x[i, ]</i> and <i>x[j, ]</i>
+while preserving <i>h(x[1], &hellip;, x[k])</i>.
+</p>
+<p>The initial state must satisfy <code>lud(initial, ...) &gt; - Inf</code> for serial
+tempering or must satisfy <code>lud(initial[i, ], ...) &gt; - Inf</code> for each
+<code>i</code> for parallel tempering, where <code>lud</code> is either <code>obj</code>
+or <code>obj$lud</code>.
+That is, the initial state must have positive probability.
+</p>
+
+
+<h3>Value</h3>
+
+<p>an object of class <code>"mcmc"</code>, subclass <code>"tempering"</code>,
+which is a list containing at least the following components:
+</p>
+<table summary="R valueblock">
+<tr valign="top"><td><code>batch</code></td>
+<td>
+<p>the batch means of the continuous part of the state.
+If <code>outfun</code> is missing, an <code>nbatch</code> by <code>k</code> by <code>p</code>
+array.  Otherwise, an <code>nbatch</code> by <code>m</code> matrix, where <code>m</code>
+is the length of the result of <code>outfun</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>ibatch</code></td>
+<td>
+<p>(returned for serial tempering only) an <code>nbatch</code>
+by <code>k</code> matrix giving batch means for the multivariate Bernoulli
+random vector that is all zeros except for a 1 in the <code>i</code>-th place
+when the current state is <i>(i, x)</i>.</p>
+</td></tr>
+<tr valign="top"><td><code>acceptx</code></td>
+<td>
+<p>fraction of Metropolis within-component proposals accepted.
+A vector of length <code>k</code> giving the acceptance rate for each component.</p>
+</td></tr>
+<tr valign="top"><td><code>accepti</code></td>
+<td>
+<p>fraction of Metropolis jump/swap proposals accepted.
+A <code>k</code> by <code>k</code> matrix giving the acceptance rate for each allowed
+jump or swap component.  <code>NA</code> for elements such that the corresponding
+elements of <code>neighbors</code> is <code>FALSE</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>initial</code></td>
+<td>
+<p>value of argument <code>initial</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>final</code></td>
+<td>
+<p>final state of Markov chain.</p>
+</td></tr>
+<tr valign="top"><td><code>initial.seed</code></td>
+<td>
+<p>value of <code>.Random.seed</code> before the run.</p>
+</td></tr>
+<tr valign="top"><td><code>final.seed</code></td>
+<td>
+<p>value of <code>.Random.seed</code> after the run.</p>
+</td></tr>
+<tr valign="top"><td><code>time</code></td>
+<td>
+<p>running time of Markov chain from <code>system.time()</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>lud</code></td>
+<td>
+<p>the function used to calculate log unnormalized density,
+either <code>obj</code> or <code>obj$lud</code> from a previous run.</p>
+</td></tr>
+<tr valign="top"><td><code>nbatch</code></td>
+<td>
+<p>the argument <code>nbatch</code> or <code>obj$nbatch</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>blen</code></td>
+<td>
+<p>the argument <code>blen</code> or <code>obj$blen</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>nspac</code></td>
+<td>
+<p>the argument <code>nspac</code> or <code>obj$nspac</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>outfun</code></td>
+<td>
+<p>the argument <code>outfun</code> or <code>obj$outfun</code>.</p>
+</td></tr>
+</table>
+<p>Description of additional output when <code>debug = TRUE</code> can be
+found in the vignette <code>debug</code> (<a href="../doc/debug.pdf">../doc/debug.pdf</a>).
+</p>
+
+
+<h3>Warning</h3>
+
+<p>If <code>outfun</code> is missing, then the log unnormalized
+density function can be defined without a ... argument and that works fine.
+One can define it starting <code>ludfun &lt;- function(state)</code> and that works
+or <code>ludfun &lt;- function(state, foo, bar)</code>, where <code>foo</code> and <code>bar</code>
+are supplied as additional arguments to <code>temper</code> and that works too.
+</p>
+<p>If <code>outfun</code> is a function, then both it and the log unnormalized
+density function can be defined without ... arguments <em>if they
+have exactly the same arguments list</em> and that works fine.  Otherwise it
+doesn't work.  Start the definitions <code>ludfun &lt;- function(state, foo)</code>
+and <code>outfun &lt;- function(state, bar)</code> and you get an error about
+unused arguments.  Instead start the definitions
+<code>ludfun &lt;- function(state, foo, ...)</code>
+and <code>outfun &lt;- function(state, bar, ...)</code>, supply
+<code>foo</code> and <code>bar</code> as additional arguments to <code>temper</code>,
+and that works fine.
+</p>
+<p>In short, the log unnormalized density function and <code>outfun</code> need
+to have ... in their arguments list to be safe.  Sometimes it works
+when ... is left out and sometimes it doesn't.
+</p>
+<p>Of course, one can avoid this whole issue by always defining the log
+unnormalized density function and <code>outfun</code> to have only one argument
+<code>state</code> and use global variables (objects in the R global environment) to
+specify any other information these functions need to use.  That too
+follows the R way.  But some people consider that bad programming practice.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+d &lt;- 9
+witch.which &lt;- c(0.1, 0.3, 0.5, 0.7, 1.0)
+ncomp &lt;- length(witch.which)
+
+neighbors &lt;- matrix(FALSE, ncomp, ncomp)
+neighbors[row(neighbors) == col(neighbors) + 1] &lt;- TRUE
+neighbors[row(neighbors) == col(neighbors) - 1] &lt;- TRUE
+
+ludfun &lt;- function(state, log.pseudo.prior = rep(0, ncomp)) {
+    stopifnot(is.numeric(state))
+    stopifnot(length(state) == d + 1)
+    icomp &lt;- state[1]
+    stopifnot(icomp == as.integer(icomp))
+    stopifnot(1 &lt;= icomp &amp;&amp; icomp &lt;= ncomp)
+    stopifnot(is.numeric(log.pseudo.prior))
+    stopifnot(length(log.pseudo.prior) == ncomp)
+    theta &lt;- state[-1]
+    if (any(theta &gt; 1.0)) return(-Inf)
+    bnd &lt;- witch.which[icomp]
+    lpp &lt;- log.pseudo.prior[icomp]
+    if (any(theta &gt; bnd)) return(lpp)
+    return(- d * log(bnd) + lpp)
+}
+
+# parallel tempering
+thetas &lt;- matrix(0.5, ncomp, d)
+out &lt;- temper(ludfun, initial = thetas, neighbors = neighbors, nbatch = 20,
+    blen = 10, nspac = 5, scale = 0.56789, parallel = TRUE, debug = TRUE)
+
+# serial tempering
+theta.initial &lt;- c(1, rep(0.5, d))
+# log pseudo prior found by trial and error
+qux &lt;- c(0, 9.179, 13.73, 16.71, 20.56)
+
+out &lt;- temper(ludfun, initial = theta.initial, neighbors = neighbors,
+    nbatch = 50, blen = 30, nspac = 2, scale = 0.56789,
+    parallel = FALSE, debug = FALSE, log.pseudo.prior = qux)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>mcmc</em> version 0.9-4 <a href="00Index.html">Index</a>]</div>
+</body></html>

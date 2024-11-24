@@ -1,0 +1,154 @@
+---
+# This code generates the codebook for the data
+# 
+# please don't change it
+#
+# please see the codebook_data_dictionary.html file for the 
+# actual data dictionary
+#
+#
+title: "Codebook (data dictionary) for data in Jarecki, Meder, & Nelson (2017)"
+author: "Jana B. Jarecki"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    #theme: "simplex"
+    toc: true
+    toc_depth: 2
+    toc_float: true
+    code_folding: "show"
+    self_contained: true
+    css: "http://janajarecki.com/codebooks/css.css"
+link-citations: yes
+---
+
+
+```{r setup, echo = FALSE, warning = FALSE, message = FALSE}
+  compact <- FALSE
+
+  # No need to change anything in this block 
+  pacman::p_load(codebook, labelled, rmarkdown, pander, ggthemes, glue)
+  knitr::opts_chunk$set(
+    warning = FALSE,
+    message = FALSE,
+    error = TRUE,
+    echo = FALSE,
+    cache = FALSE,
+    fig.margin = TRUE,
+    fig.height = 1.4,
+    fig.width = 3
+    )
+  options(digits = 2)
+  pander::panderOptions("table.split.table", Inf)
+  ggplot2::theme_set(ggthemes::theme_tufte(
+    base_family = "sans",
+    ticks = FALSE))
+```
+
+
+```{r, meta_info}
+# Defines how to print the codebook
+print_options <- list(
+    detailed_variables = FALSE, # print each vari
+    detailed_scales = FALSE, # print for each variable the scale
+    survey_overview = TRUE,
+    missingness_report = FALSE, # print table with summary of missings
+    metadata_table = TRUE, # table with the meta-data
+    metadata_json = TRUE,
+    indent = "##" # add a # if you use more than level-1 headings
+)
+# Define a list of metadata for all codebooks in this project
+meta_info <- list(
+  citation = "Jarecki, J. B., Meder, B., & Nelson, J. D. (2017). Naive and
+  Robust: Class-Conditional Independence in Human Classification Learning.
+  Cognitive Science, 42(1), 4-42. https://doi.org/10.1111/cogs.12496",
+  identifier = "https://doi.org/10.1111/cogs.12496",
+  creator =list(
+    "@type" = "Person",
+    givenName = "Jana B.",
+    familyName = "Jarecki",
+    #email = "jj@janajarecki.com", 
+    affiliation = list(
+      "@type" = "Organization",
+      name = "Max-Planck-Institute for Human Development, Berlin")
+    ),
+    spatialCoverage = "Berlin, Germany",
+    temporalCoverage = "September to December 2012",
+    measurementTechnique = "Computerized cognitive learning task",
+    funder = "MPI Berlin. Partial funding by grants NE 1713/1-2 to JDN, and ME 3717/2-2 to BM, from the Deutsche Forschungsgemeinschaft (DFG) as part of the priority program 'New Frame- works of Rationality' (SPP 1516).",
+    keywords = c("behavioral data",  "experimental data", "classification", 
+    "class-conditional independence", "learning", "naive Bayes",
+    "Markov property", "Bayesian model", "probabilistic inference",
+    "heuristics", "machine-learning", "human data")
+)
+```
+
+
+
+
+
+```{r choicedata}
+make_dict <- function(s) {
+
+d <- read.csv2(glue("study{s}_data.csv"),
+               colClasses = c(e = "factor", form = "factor"))
+
+metadata(d) <- meta_info
+
+var_label(d) <- list(
+  i = "Pseudonymized participant ID",
+  t = "Trial number per particiant, maximum mot identical for participants",
+  e = "The stimulus in the trial, features (numbers) and 
+       the associated true catgory (letter), which participants 
+       are instructed to learn",
+  ch = "Observed choice given the stimulus, A or B",
+  smiley = "Feedback about the correctness of class choice",
+  tdCh = "time interval from this trial's start to the class choice 
+  in deciseconds, i.e. tenths of seconds", 
+  tdNex = "time interval from this trial's start to the key press to see next 
+  stimulus in in deciseconds, i.e. tenths of seconds", 
+  tStart = "absolute time of the start of the trial",
+  tCh = "time interval from this trial's start to the class choice in miliseconds",
+  tNex = "time interval from this trial's start to the key press to see next stimulus in miliseconds",
+  form = "visual (randomized) form in which the features of the stimulus appeared"
+)
+
+val_labels(d$smiley) <- c(
+  "smiley, feedback about correct class chosen" = "s",
+  "frowney, feedback about incorrect class chosen" = "f")
+
+nStim <- length(unique(substr(d$e, 1, 3)))
+
+metadata(d) <- c(metadata(d), list(
+  name = glue("Category choices study {s}"),
+  description = glue("Data on human higher-order cognition and learning in a categorization task. The task involved that participants classified images of plankton specimen that had three features (eye, claw, and tail of the plankton) into one of two classes (species A and species B), that means a visual supervised classification learning task. In total there were {nStim} different plankton that were shown repeatedly (images see Fig. 5 in the paper). A plankton was randomly drawn from a distribution (Table {s} in the paper), and each plankton image corresponded to one feature combination and belonged {c('deterministically','with a probability')[s]} to one class. In each trial participants saw one plankton, classified it by pressing a key, and received fedback about the true class of the plankton (shown as letters 'A' or 'B' and a smile emoticon after a correct classification and a frown emoticon otherwise). Participants were instructed to consistently decide for the most likely class. Another stimulus appeared, and learning continued until participants had learned the correct class for each stimulus based on (a) having made maximally four classification errors within the latest 200 trials (98% of 200 correct), and (b) selecting the most likely class for the last five times that each single plankton stimulus appeared within the random sequence of stimuli. Learning was self-paced, the data contains reaction times. Note, that in the images, which visual feature dimesion (eye, claw, tail) corresponded to which feature dimension in the classification and the class labels were randomized across participants. The data contains the de-randomized features-class associations.")
+))
+return(d)
+}
+d1 <- make_dict(1)
+d2 <- make_dict(2)
+```
+
+# Codebook Study 1
+
+## `r metadata(d1)$name`
+
+```{r study-1}
+if (compact == TRUE) {
+  compact_codebook(d)
+} else {
+  do.call(codebook, c(list(results = d1), print_options))
+}
+```
+
+# Codebook Study 2
+
+## `r metadata(d2)$name`
+
+```{r study-2}
+if (compact == TRUE) {
+  compact_codebook(d)
+} else {
+  do.call(codebook, c(list(results = d2), print_options))
+}
+```

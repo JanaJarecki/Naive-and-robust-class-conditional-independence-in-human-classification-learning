@@ -1,0 +1,35 @@
+connection data (win scp; putty)
+
+
+unix befehle
+------------
+cd Data				change directory to "Data"			
+cd ..				change directory (move to parent folder)
+
+ls				list all files in folder
+ls -l				list all files in folder (with file modes)
+
+top				display table of processes
+passwd				change password of user
+
+kill PID			kill process with id "PID"
+killall R			kill all processes of R
+
+chmod +x batch.sh 		change modus of batch.sh as executable
+
+./batch.sh > out1 &  		execute batch.sh and write screen output to "out1" (silently)
+R --no-save < ./wrapper.r 	execute wrapper.r
+nohup  R --no-save < ./wrapper.r execute wrapper.r such that you can close shell write output to "nohub.out" (silently)
+	
+tail -f out1			show the tail of the file "out1"
+
+exit				leave console
+
+
+
+R parallelization
+-----------------
+library(foreach)
+library(doMC)
+registerDoMC(cores)
+foreach(condition = index) %dopar% your_function(x, y, ...)

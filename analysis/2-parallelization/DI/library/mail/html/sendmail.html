@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Sends an Email with Status Information</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sendmail {mail}"><tr><td>sendmail {mail}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Sends an Email with Status Information</h2>
+
+<h3>Description</h3>
+
+<p>Use <code>sendmail</code> to send an email notification with status information from R.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+sendmail(recipient, subject="Notification from R",
+		message="Calculation finished!", password="rmail")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>recipient </code></td>
+<td>
+<p> A valid email address.</p>
+</td></tr>
+<tr valign="top"><td><code>subject   </code></td>
+<td>
+<p> Subject of the email message.</p>
+</td></tr>
+<tr valign="top"><td><code>message   </code></td>
+<td>
+<p> Body of the email message.</p>
+</td></tr>
+<tr valign="top"><td><code>password  </code></td>
+<td>
+<p> Password. Please don't change the default password.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>Only a combination of alphabetic and numeric characters with the following special characters are valid:
+<code>0-9, a-z, A-Z, . : , ; ! ? % _ = @ *</code>.
+Supported white spaces are blancs and line breaks.
+Line breaks must be encoded via <code>\n</code> or <code>\r</code>.
+</p>
+
+
+<h3>Value</h3>
+
+<p>The function <code>sendmail</code> returns a string with information about the processing of your message.
+</p>
+
+
+<h3>Note</h3>
+
+<p>To avoid spam, you have a maximum of 20 email notifications per day, that you can send from the same IP-address.
+Send me a message, if you want to deactivate the limitation of 20 email notifications per day.
+Notifications via SMS are supported only on request. 
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Dr. Lin Himmelmann &lt;Rmail@linhi.com&gt;, Statistical Consulting
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# sendmail("your@email.com", "R notice", "Calculation finished.\nFetch your data!")
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>mail</em> version 1.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

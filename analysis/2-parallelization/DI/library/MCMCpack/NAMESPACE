@@ -1,0 +1,85 @@
+useDynLib(MCMCpack)
+import("coda")
+import("MASS")
+import("stats")
+import("utils")
+import("grDevices")
+import("lattice")
+import("methods")
+import("mcmc")
+import("quantreg")
+importFrom("graphics", "plot", "lines", "abline", "axTicks", "axis", "box", "layout",
+           "lcm", "legend", "par", "plot.new", "plot.window", "points",
+           "rect")
+
+export(BayesFactor,
+       choicevar,
+       ddirichlet,
+       dinvgamma,
+       diwish,
+       dnoncenhypergeom,
+       dtomogplot,
+       dwish,
+       HMMpanelFE,
+       HMMpanelRE,
+       MCbinomialbeta,
+       MCpoissongamma,
+       MCnormalnormal,
+       MCmultinomdirichlet,
+       MCMCbinaryChange,
+       MCMCdynamicEI,
+       MCMCdynamicIRT1d,
+       MCMCfactanal,
+       MCMChierEI,
+       MCMChlogit,
+       MCMChpoisson,
+       MCMChregress,
+       MCMCirt1d,
+       MCMCirtHier1d,
+       MCMCirtKd,
+       MCMCirtKdRob,
+       MCMClogit,
+       MCMCmetrop1R,
+       MCMCmixfactanal,
+       MCMCmnl,
+       MCMCoprobit,
+       MCMCoprobitChange,
+       MCMCordfactanal,
+       MCMCpoisson,
+       MCMCpoissonChange,
+       MCMCprobit,
+       MCMCprobitChange,
+       MCMCquantreg,
+       MCMCregress,
+       MCMCregressChange,
+       MCMCSVDreg,
+       MCMCtobit,
+       make.breaklist,
+       mptable,
+       plotState,
+       plotChangepoint,
+       PostProbMod,
+       procrustes,
+       rdirichlet,
+       read.Scythe,
+       rinvgamma,
+       riwish,
+       rnoncenhypergeom,
+       rwish,
+       SSVSquantreg,
+       testpanelGroupBreak,
+       testpanelSubjectBreak,
+       tomogplot,
+       topmodels,
+       vech,
+       write.Scythe,
+       xpnd
+       )
+
+S3method(print, BayesFactor)
+S3method(summary, BayesFactor)
+S3method(plot, qrssvs)
+S3method(print, qrssvs)
+S3method(print, summary.qrssvs)
+S3method(summary, qrssvs)
+
