@@ -14,10 +14,10 @@ Humans excel in categorization. Yet from a computational standpoint, learn-ing a
 * Jarecki, J. B., Meder, B., & Nelson, J. D. (2017). Naïve and Robust: Class-Conditional Independence in Human Classification Learning. Cognitive Science, 42(1), 4–42. https://doi.org/10.1111/cogs.12496
 
 ### Open Data
-2 Open-data datasets, 4 simulation studies
+2 Open-data datasets on human cognitive preformance [study1](data/study1_data.csv) and [study2](data/study1_data.csv), and 4 simulation datasets. The variable dictionary is online, see the [codebook](data/data_dictionary_codebook.html).
 
 ### Machine-Learning Models
-1 new nodel based on Naive Bayes
+1 new model based on Naive Bayes
 
 ### Funding
 Max-Planck-Institute for Human Development, Berlin, and in part by grants NE 1713/1-2 to JDN, and ME 3717/2-2 to BM, from the Deutsche Forschungsgemeinschaft (DFG) as part of the priority program “New Frame- works of Rationality” (SPP 1516).
